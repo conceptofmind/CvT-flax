@@ -1,5 +1,7 @@
 ## CvT
 
+<img src="./cvt.png" width="400px"></img>
+
 "We present in this paper a new architecture, named Convolutional vision Transformer (CvT), that improves Vision Transformer (ViT) in performance and efficiency by introducing convolutions into ViT to yield the best of both designs. This is accomplished through two primary modifications: a hierarchy of Transformers containing a new convolutional token embedding, and a convolutional Transformer block leveraging a convolutional projection. These changes introduce desirable properties of convolutional neural networks (CNNs) to the ViT architecture (\ie shift, scale, and distortion invariance) while maintaining the merits of Transformers (\ie dynamic attention, global context, and better generalization). We validate CvT by conducting extensive experiments, showing that this approach achieves state-of-the-art performance over other Vision Transformers and ResNets on ImageNet-1k, with fewer parameters and lower FLOPs. In addition, performance gains are maintained when pretrained on larger datasets (\eg ImageNet-22k) and fine-tuned to downstream tasks. Pre-trained on ImageNet-22k, our CvT-W24 obtains a top-1 accuracy of 87.7\% on the ImageNet-1k val set. Finally, our results show that the positional encoding, a crucial component in existing Vision Transformers, can be safely removed in our model, simplifying the design for higher resolution vision tasks." - Haiping Wu, Bin Xiao, Noel Codella, Mengchen Liu, Xiyang Dai, Lu Yuan, Lei Zhang
 
 ### Research Paper:
@@ -55,4 +57,25 @@ n_params_flax = sum(
     jax.tree_leaves(jax.tree_map(lambda x: numpy.prod(x.shape), params))
 )
 print(f"Number of parameters in Flax model: {n_params_flax}")
+```
+```bibtex
+@article{DBLP:journals/corr/abs-2103-15808,
+  author    = {Haiping Wu and
+               Bin Xiao and
+               Noel Codella and
+               Mengchen Liu and
+               Xiyang Dai and
+               Lu Yuan and
+               Lei Zhang},
+  title     = {CvT: Introducing Convolutions to Vision Transformers},
+  journal   = {CoRR},
+  volume    = {abs/2103.15808},
+  year      = {2021},
+  url       = {https://arxiv.org/abs/2103.15808},
+  eprinttype = {arXiv},
+  eprint    = {2103.15808},
+  timestamp = {Mon, 30 Aug 2021 15:14:07 +0200},
+  biburl    = {https://dblp.org/rec/journals/corr/abs-2103-15808.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
 ```
